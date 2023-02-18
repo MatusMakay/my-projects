@@ -1,4 +1,5 @@
 # Popis projektu
+> Projekt vznikol podla zadania od Zamestnavatela
 
 **Spustenie**
 - nainstalujte potrebne kniznice pomocou prikazu npm install 
@@ -14,6 +15,4 @@
 - Content renderujem na strane servera pomocou Handlebars 
 - Na vymazavanie elementov v browseri som napisal script handlers.js ktory zabezpecuje interakciu s userom 
 
-
-## Tesim sa na online stretnutie :)
 *Matus Makay*
