@@ -1,0 +1,30 @@
+{
+  "name": "nasa_project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "install-server" : "cd server && npm install",
+    "install-client" : "cd client && npm install",
+    "install" : "npm run install-server && npm run install-client",
+    "server" : "cd server && npm run watch",
+    "server-start":"cd server && npm run start",
+    "client" : "cd client && npm start",
+    "watch" : "npm run server & npm run client",
+    "watch-server": "npm run watch --prefix server",
+    "deploy": "npm run build --prefix client && npm start --prefix server",
+    "deploy-cluster": "npm run build --prefix client && npm run cluster --prefix server",
+    "test": "npm run test --prefix server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MatusMakay/nasa_project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MatusMakay/nasa_project/issues"
+  },
+  "homepage": "https://github.com/MatusMakay/nasa_project#readme"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "miso_zad",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "exceljs": "^4.3.0",
+    "mathjs": "^11.5.0",
+    "moment": "^2.29.4",
+    "xml-js": "^1.6.11"
+  }
+}

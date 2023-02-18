@@ -1,0 +1,5 @@
+node_modules
+tryIt.js
+**/mission.test.js
+
+env/variables.js
