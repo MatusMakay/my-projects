@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Drag</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--Zakladne Triedy-->
+    <script src="js/node.js"></script>
+    <script src="js/gameobject.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/scena.js"></script>
+    <script src="js/background.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/prak.js"></script>
+    <!--Odvodene triedy-->
+    <script src="js/person/person.js"></script>
+    <script src="js/person/birds.js"></script>
+    <script src="js/person/wall.js" ></script>
+    <script src="js/person/pigs.js"></script>
+
+    <script src="js/buttons/button.js"></script>
+    <script src="js/sounds/js/sound.js"></script>
+    <script src="js/widgets/widget.js"></script>
+    <script src="js/widgets/textBox.js"></script>
+
+    <!--SCREENY-->
+    <script src="js/levels/level1.js"></script>
+    <script src="js/levels/level2.js"></script>
+    <script src="js/levels/level3.js"></script>
+
+    <script src="js/screens/gameoverScreen.js"></script>
+    <script src="js/screens/mainScreen.js"></script>
+    <script src="js/screens/instructionScreen.js"></script>
+    <script src="js/screens/scoreScreen.js"></script>
+    <script src="js/screens/lvlCompleted.js"></script>
+    <script src="js/screens/menuinGame.js"></script>
+    <script src="js/screens/addPlayerScreen.js"></script>
+    <script src="js/screens/saveonServer.js"></script>
+    <script src="js/screens/warningScreen.js"></script>
+    <script src="js/screens/gameCompleted.js"></script>
+    <script src="js/box.js"></script>
+</head>
+<body>
+    <header>
+        <h1>
+            Hecni sa, ukáž čo je v tebe!
+        </h1>
+    </header>
+    <main>
+        <canvas id="canvas" width="900" height="700"></canvas>
+    </main>
+    <!-- INCLUDOVANIE OBRAZKOV -->
+    <img id="btn-start" src="img\buttons\button-start.png" />
+    <img id="btn-retry" src="img\buttons\button-retry.png" />
+    <img id="btn-help" src="img\buttons\button-help.png" />
+    <img id="btn-exit" src="img\buttons\button-exit.png" />
+    <img id="btn-score" src="img\buttons\button-score3.png" />
+    <img id="btn-soundOn" src="img\buttons\btn-soundOn.png" />
+    <img id="btn-soundOff" src="img\buttons\btn-soundOff.png" />
+    <img id="btn-musicOn" src="img\buttons\music-on.png" />
+    <img id="btn-musicOff" src="img\buttons\music-off.png" />
+    <img id="btn-menu" src="img\buttons\button-lvlMenu.png" />
+    <img id="btn-nextLvl" src="img\buttons\button-nextLvl.png" />
+    <img id="btn-continueLevel" src="img\buttons\button-continue.png" />
+    <img id="btn-quitLevel" src="img\buttons\button-quitLevel.png" />
+    <img id="btn-retryLevel" src="img\buttons\button-retryLevel.png" />
+
+    <img id="backs-main" src="img\backs\backs-main.png" />
+    <img id="backs-lose" src="img\backs\backs-gameover3.png" />
+    <img id="backs-won" src="img\backs\backs-won.png" />
+    <img id="backs-instruction" src="img\backs\backs-instruction1.png" />
+    <img id="backs-lvl1" src="img\backs\backs-game.png" />
+
+    <img id="pig1" src="img\pigs\pig1.png" />
+    <img id="pig1-dead" src="img\pigs\pig1-dead.png" />
+    <img id="pig2" src="img\pigs\pig2.png" />
+    <img id="pig2-almostDead" src="img\pigs\pig2-almostdead.png" />
+    <img id="pig2-dead" src="img\pigs\pig2-dead.png" />
+    <img id="pig3" src="img\pigs\pig3.png" />
+    <img id="pig3-almostDead" src="img\pigs\pig3-almostdead.png" />
+    <img id="pig3-dead" src="img\pigs\pig3-dead.png" />
+
+    <img id="red1" src="img\birds\red1.png" />
+
+    <img id="red1-before" src="img\birds\red1-before.png" />
+
+    <img id="red2" src="img\birds\red2.png" />
+    <img id="red3" src="img\birds\red3.png" />
+    <img id="big1" src="img\birds\big1.png" />
+    <img id="big2" src="img\birds\big2.png" />
+    <img id="big3" src="img\birds\big3.png" />
+
+    <img id="prak" src="img\blocks\prak.png" />
+
+    <!--Steny-->
+
+
+    <img id="glassBlockLive" src="img/blocks/s-block-glassLive.png" />
+    <img id="glassBlockDead1" src="img/blocks/s-block-glassDead1.png" />
+    <img id="glassBlockDead2" src="img/blocks/s-block-glassDead2.png" />
+    <img id="glassBlockDead3" src="img/blocks/s-block-glassDead3.png" />
+
+    <img id="glassWallLive" src="img/blocks/s-wall-glassLive.png" />
+    <img id="glassWallDead1" src="img/blocks/s-wall-glassDead1.png" />
+    <img id="glassWallDead2" src="img/blocks/s-wall-glassDead2.png" />
+    <img id="glassWallDead3" src="img/blocks/s-wall-glassDead3.png" />
+
+    <img id="woodWallLive" src="img/blocks/s-wall-woodLive.png" />
+    <img id="woodWallDead1" src="img/blocks/s-wall-woodDead1.png" />
+    <img id="woodWallDead2" src="img/blocks/s-wall-woodDead2.png" />
+    <img id="woodWallDead3" src="img/blocks/s-wall-woodDead3.png" />
+
+    <img id="woodBlockLive" src="img/blocks/s-block-woodLive.png" />
+    <img id="woodBlockDead1" src="img/blocks/s-block-woodDead1.png" />
+    <img id="woodBlockDead2" src="img/blocks/s-block-woodDead2.png" />
+    <img id="woodBlockDead3" src="img/blocks/s-block-woodDead3.png" />
+    <img id="stone" src="img/blocks/s-block-stone.png" />
+    <!--Die effect-->
+    <img id="die1" src="img/dieEffect/die1.png" />
+    <img id="die2" src="img/dieEffect/die2.png" />
+    <img id="die3" src="img/dieEffect/die3.png" />
+
+    <audio id="soundMain" controls>
+        <source src="js\sounds\sound-1.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="birdDie" controls>
+        <source src="js\sounds\bird-die.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="birdFlying" controls>
+        <source src="js\sounds\bird-flying.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="birdHit" controls>
+        <source src="js\sounds\bird-hit.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="birdSelect" controls>
+        <source src="js\sounds\bird-select.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="pigDie" controls>
+        <source src="js\sounds\pig-die.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="pigHit" controls>
+        <source src="js\sounds\pig-hit.mp3" type="audio/mp3" />
+    </audio>
+
+    <audio id="glassWallHit" controls>
+        <source src="js\sounds\glassWall-hit.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="glassWallDestroyed" controls>
+        <source src="js\sounds\glassWall-destroyed.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="woodWallHit" controls>
+        <source src="js\sounds\wood-hit.mp3" type="audio/mp3" />
+    </audio>
+    <audio id="woodWallDestroyed" controls>
+        <source src="js\sounds\wood-destroyed.mp3" type="audio/mp3" />
+    </audio>
+</body>
+</html>
